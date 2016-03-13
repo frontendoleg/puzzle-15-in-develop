@@ -6,65 +6,68 @@
 	<link rel = "stylesheet" href = "css/style.css">
 </head>
 <body>
-	<div class = 'wrapper'>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>1</p>
-	</div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>2</p>
-	</div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>3</p>
-	</div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>4</p>
-	</div>
-			<div class = 'clear'></div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>5</p>
-	</div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>6</p>
-	</div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>7</p>
-	</div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>8</p>
-	</div>
-			<div class = 'clear'></div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>9</p>
-	</div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>10</p>
-	</div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>11</p>
-	</div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>12</p>
-	</div>
-			<div class = 'clear'></div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>13</p>
-	</div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>14</p>
-	</div>
-	<div class = 'bone'>
-		<p class = 'boneNumber'>15</p>
-	</div>
-			<div class = 'clear'></div>
-</div>
+	<script>
+	var
+	browserWidth = window.innerWidth,
+	browserHeight = window.innerHeight;
+	var fooW = 20*Math.floor(browserWidth/20);
+	console.log('fooW:' + fooW);
+	var fooH = 20*Math.floor(browserHeight/20);
+	console.log('fooH:' + fooH);
+	var bar = Math.min(fooW, fooH ), FieldSize;
+	if (bar>480){ fieldSize = "480px";}
+		else {fieldSize = bar+"px";}
 
 
-	<script type="text/javascript">
-		$(function(){
-			var a = $('a:not("p a")');
-			a.hide().addClass("NonVisible");
-			console.log(a);
-		})
+	console.log('bar: ' + bar);
+
+	$("<div></div>",{
+		'width': fieldSize,
+		'height': fieldSize,
+	})
+	.toggleClass('wrapperr')
+	.css({
+		'background-color': '#999',
+	 	'margin': '0 auto',
+	 	'padding': '10px',
+	 	/*'margin' : '10px',*/
+	 	'border-radius': '10px',
+	 	'position': 'relative',
+	 })
+	.appendTo('body');
+
+	$("<div></div>",{
+		'width': '100px',
+		'height': '100px',
+	})
+	.css({
+		'background-color':'green',
+		'border':'10px solid #999',
+		'position' : 'absolute',
+		'border-radius': '20px',
+		'left': '0',
+		'top': '0',
+	})
+	.appendTo('.wrapperr');
+
+	$("<div></div>",{
+		'width': '100px',
+		'height': '100px',
+	})
+	.css({
+		'background-color':'green',
+		'border':'10px solid #999',
+		'position' : 'absolute',
+		'border-radius': '20px',
+		'left': '110px',
+		'top': '0',
+	})
+	.appendTo('.wrapperr');
+
+
+	/*.css(width:250px, height: 250px);*/
+
 	</script>
+
 </body>
 </html>
