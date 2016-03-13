@@ -36,7 +36,8 @@
 	 })
 	.appendTo('body');
 
-	$("<div></div>",{
+	for (var i=0; i<4; i++){
+		$("<div></div>",{
 		'width': boneSizePx,
 		'height': boneSizePx,
 	})
@@ -44,26 +45,13 @@
 		'background-color':'green',
 		'border':'1px solid red',
 		'position' : 'absolute',
-		'left': '0',
+		'left': i*boneSize+"px",
 		'top': '0',
 	})
 	.appendTo('.wrapperr');
 
-	$("<div></div>",{
-		'width': boneSizePx,
-		'height': boneSizePx,
-	})
-	.css({
-		'background-color':'green',
-		'border':'1px solid red',
-		'position' : 'absolute',
-		'left': boneSizePx,
-		'top': '0',
-	})
-	.appendTo('.wrapperr');
+	}
 
-
-	/*.css(width:250px, height: 250px);*/
 
 	</script>
 
