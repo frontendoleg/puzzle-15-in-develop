@@ -15,51 +15,49 @@
 	var fooH = 20*Math.floor(browserHeight/20);
 	console.log('fooH:' + fooH);
 	var bar = Math.min(fooW, fooH ), FieldSize;
-	if (bar>480){ fieldSize = "480px";}
-		else {fieldSize = bar+"px";}
+	if (bar>480){ fieldSize = 480;}
+		else {fieldSize = bar;};
+	var boneSize = Math.floor(fieldSize/4);
+	var boneSizePx = boneSize + "px";
+	var fieldSizePx = fieldSize + "px";
 
 
 	console.log('bar: ' + bar);
 
 	$("<div></div>",{
-		'width': fieldSize,
-		'height': fieldSize,
+		'width': fieldSizePx,
+		'height': fieldSizePx,
 	})
 	.toggleClass('wrapperr')
 	.css({
 		'background-color': '#999',
 	 	'margin': '0 auto',
-	 	'padding': '10px',
-	 	/*'margin' : '10px',*/
-	 	'border-radius': '10px',
 	 	'position': 'relative',
 	 })
 	.appendTo('body');
 
 	$("<div></div>",{
-		'width': '100px',
-		'height': '100px',
+		'width': boneSizePx,
+		'height': boneSizePx,
 	})
 	.css({
 		'background-color':'green',
-		'border':'10px solid #999',
+		'border':'1px solid red',
 		'position' : 'absolute',
-		'border-radius': '20px',
 		'left': '0',
 		'top': '0',
 	})
 	.appendTo('.wrapperr');
 
 	$("<div></div>",{
-		'width': '100px',
-		'height': '100px',
+		'width': boneSizePx,
+		'height': boneSizePx,
 	})
 	.css({
 		'background-color':'green',
-		'border':'10px solid #999',
+		'border':'1px solid red',
 		'position' : 'absolute',
-		'border-radius': '20px',
-		'left': '110px',
+		'left': boneSizePx,
 		'top': '0',
 	})
 	.appendTo('.wrapperr');
